@@ -3,18 +3,18 @@ import styled from "styled-components";
 import axios from "axios";
 
 function App() {
-  const [prompt, setPrompt] = useState(""); // »ç¿ëÀÚ ÀÔ·Â »óÅÂ
-  const [responses, setResponses] = useState([]); // Django¿¡¼­ ¹ŞÀº ÀÀ´ä ÀúÀå
+  const [prompt, setPrompt] = useState(""); // ì‚¬ìš©ì ì…ë ¥ ìƒíƒœ
+  const [responses, setResponses] = useState([]); // Djangoì—ì„œ ë°›ì€ ì‘ë‹µ ì €ì¥
 
   const handleSubmit = async () => {
-    if (!prompt) return; // ºó ÀÔ·Â ¹æÁö
+    if (!prompt) return; // ë¹ˆ ì…ë ¥ ë°©ì§€
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/chat/", {
+      const response = await axios.post("http://3.38.34.194:8000/test/", {
         prompt: prompt
       });
 
-      setResponses(response.data.responses); // Django¿¡¼­ ¹ŞÀº ´äº¯À» ÀúÀå
+      setResponses(response.data.responses); // Djangoì—ì„œ ë°›ì€ ë‹µë³€ì„ ì €ì¥
       console.log("ok");
     } catch (error) {
       console.error("Error sending prompt:", error);
