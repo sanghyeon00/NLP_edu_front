@@ -9,8 +9,10 @@ function App() {
   const handleSubmit = async () => {
     if (!prompt) return; // 빈 입력 방지
 
+    //http://3.38.34.194:8000/test/
+
     try {
-      const response = await axios.post("http://3.38.34.194:8000/test/", {
+      const response = await axios.post("http://127.0.0.1:8000/test/", {
         prompt: prompt
       });
 
@@ -86,6 +88,7 @@ const ResponseBox = styled.div`
   background-color: white;
   padding: 10px;
   margin: 5px 0;
+  width: 800px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 `;
