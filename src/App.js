@@ -12,7 +12,7 @@ function App() {
     //http://3.38.34.194:8000/test/
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/test/", {
+      const response = await axios.post("http://3.38.34.194:8000/test/", {
         prompt: prompt
       });
 
